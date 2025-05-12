@@ -1,31 +1,24 @@
 #!/usr/bin/node
 /*
-    Imprimer un carré avec le caractère #
+    Print a square with the character #
     
-    La taille du carré doit être le premier argument 
-    du programme.
+    The size of the square must be the first argument 
+    of the program.
 */
 
+
 if (process.argv.length <= 2) {
-    process.stderr.write("Argument manquant\n");
-    process.stderr.write("Usage : ./1-print_square.js <taille>\n");
-    process.stderr.write("Exemple : ./1-print_square.js 8\n");
-    process.exit(1);
+    process.stderr.write("Missing argument\n");
+    process.stderr.write("Usage: ./1-print_square.js <size>\n");
+    process.stderr.write("Example: ./1-print_square.js 8\n");
+    process.exit(1)
 }
 
-let taille = parseInt(process.argv[2], 10);  // Force la base 10
+const size = parseInt(process.argv[2], 10);
 
-// Vérification si la taille est un entier positif valide
-if (isNaN(taille) || taille <= 0) {
-    process.stderr.write("La taille doit être un entier positif\n");
-    process.exit(1);
-}
-
-for (let i = 0; i < taille; i++) {
-    let ligne = '';
-    for (let j = 0; j < taille; j++) {
-        ligne += '#'; // Ajoute un caractère # à la ligne
+for (let i = 0 ; i < size ; i ++) {
+    for (let j = 0 ; j < size ; j ++) {
+        process.stdout.write("#");
     }
-    console.log(ligne); // Affiche la ligne complète
+    process.stdout.write("\n");
 }
-
