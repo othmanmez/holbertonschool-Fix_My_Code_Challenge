@@ -13,7 +13,7 @@ if (process.argv.length <= 2) {
     process.exit(1);
 }
 
-let taille = parseInt(process.argv[2]);
+let taille = parseInt(process.argv[2], 10);  // Force la base 10
 
 // Vérification si la taille est un entier positif valide
 if (isNaN(taille) || taille <= 0) {
